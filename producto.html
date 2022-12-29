@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juvenil Corp</title>
+    <!-- enlazar normalize y style css-->
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <!-- despues los estilos de la letra -->
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+
+
+    <header class="header">
+        <!-- el logotipo siempre debe llevarte al inicio de la pagina  -->
+        <a href="index.html">
+            <!-- propiedad de texto alternativo -->
+            <img class="header__logo" src="img/logo.png" alt="LogotipoNotFound">
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
+        <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+    </nav>
+
+    <!--   apertura del contenido -->
+    <main class="contenedor">
+        <h1> VueJS</h1>
+
+        <div class="camisa">
+            <img class="camisa__imagen" src="img/1.jpg" alt="Imagen del producto">
+            <!-- texto -->
+            <div class="camisa__camisa">
+                <p>
+                    raesent rutrum, ex varius tincidunt fringilla, diam lectus tristique risus, at mollis dui tellus ac
+                    arcu. Cras id eros turpis.
+                    Nam ullamcorper eros eget magna tincidunt varius. Aliquam vitae molestie lacus.
+                    Sed purus ex, fermentum sit amet faucibus quis, finibus eget augue. In id pulvinar purus.
+                    Sed vulputate nisi quis tempor sagittis.
+                </p>
+
+
+
+
+                <!-- formulario -->
+
+
+                <form class="formulario">
+                    <select class = "formulario__campo">
+                        <!-- permite elejir una serie de opciones -->
+                        <!-- opcion a msotrar predefinida que no se volvera msotrar luego despuesque se seleccione alguna opcion disponioble -->
+                        <option disabled selected> --Eliga la talla--</option>
+                        <!-- opciones -->
+                        <option>Chica</option>
+                        <option>Mediana</option>
+                        <option>Grande</option>
+                    </select>
+                    <input class="formulario__campo" type="number" placeholder="Cantidad" min="1">
+                    <input class ="formulario__submit" type="submit" value="Agregar al carrito" min="1">
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto"> © Front End Store - Todos los derechos reservados</p>
+    </footer>
+</body>
+
+</html>

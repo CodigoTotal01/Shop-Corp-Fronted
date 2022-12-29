@@ -1,0 +1,315 @@
+/* custom properties */
+:root {
+  /* color(es) */
+  --primario: #457b9d;
+  --primarioOscuro: #264653;
+  --secundario: #ffce00;
+  --secundarioOscuro: rgb(170, 154, 88);
+  --blanco: #fff;
+  --negro: #000;
+  /* fuente(s) */
+  --fuentePrincipal: "Staatliches", cursive;
+}
+/* Elemental */
+html {
+  box-sizing: border-box;
+  /* nos permitira evitar estar con la calculadora de rems */
+  font-size: 62.5%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* globales */
+body {
+  background-color: var(--primario);
+  /* dimension de la letra */
+  font-size: 1.6rem;
+  /* interlineado, base de la fuente */
+  line-height: 1.5;
+}
+
+p {
+  font-size: 1.8rem;
+  /* tipo de fuente a usar */
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--blanco);
+}
+
+/* para los elementos del nav */
+a {
+  text-decoration: none;
+}
+img {
+  /* La propiedad de ancho de un elemto */
+  max-width: 100%;
+}
+.contenedor {
+  max-width: 120rem;
+  /*establece el margen para los cuatro lados */
+  margin: 0 auto;
+}
+/* titulos generales */
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--secundario);
+  font-family: var(--fuentePrincipal);
+}
+
+/* tamaño a cada titulo  */
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.4rem;
+}
+
+/* ya no globalizamos*/
+/* header*/
+.header {
+  display: flex;
+  /* como el navegador distribuye el espacio entre y alrededor de los items flex */
+  justify-content: center;
+}
+.header__logo {
+  margin: 3rem 0;
+}
+
+/* footer */
+.footer {
+  background-color: var(--primarioOscuro);
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.footer__texto {
+  font-family: var(--fuentePrincipal);
+  text-align: center;
+  font-size: 2.2rem;
+}
+/* navegacion */
+.navegacion {
+  background-color: var(--primarioOscuro);
+  /* palabras propias: Util para agrandar desde el elemento  de adentro hacia afuera  */
+  /* establece el espacio de relleno requerido por todos los lados de un elemento */
+  padding: 1rem 0;
+  /* para centrarlo */
+  display: flex;
+  justify-content: center;
+  /* nuevo para separar los elementos */
+  /* gap: 2rem; */
+}
+.navegacion__enlace {
+  font-family: var(--fuentePrincipal);
+  color: var(--blanco);
+  font-size: 3rem;
+  /* version antigua */
+  margin-right: 2rem;
+  /* coidigo para arreglar el separado duplicado */
+
+  /* antes separa selectore ---->margin-right: 2rem*/
+}
+
+/* modificador */
+.navegacion__enlace:last-of-type {
+  /* siempre seleccionara el ultimo elemnto*/
+  margin-right: 0;
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+  color: var(--secundario);
+}
+/* grid  */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* column-gap: 2rem;
+  row-gap: 2rem; */
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* productos */
+.producto {
+  background-color: var(--primarioOscuro);
+  padding: 2rem;
+}
+.producto__imagen {
+  width: 100%;
+}
+
+.producto__nombre {
+  font-size: 4rem;
+}
+.producto__precio {
+  font-size: 2.8rem;
+  color: var(--secundario);
+}
+/* aplicando estilo de letra en dos elementos */
+.producto__nombre,
+.producto__precio {
+  font-family: var(--fuentePrincipal);
+  margin: 1rem 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.grafico {
+  /* no aparece solito los gareficos, fiajrte en la altura en este caso teniendo en cunta como es que se a definido el grid */
+  min-height: 30rem;
+  /* para que la imgen no se repita (default) */
+  background-repeat: no-repeat;
+  /* hacer que la imgen tome todo el espacio del que dispone */
+  background-size: cover;
+  /* como en ambos dse aplicara las mismas reglas de define aqui */
+
+  grid-column: 1/3;
+}
+
+.grafico--camisas {
+  /* añadiendo las imagenes y  las posciciones de los elementos */
+  /* ubicacion */
+  grid-row: 2/3;
+  background-image: url(../img/grafico1.jpg);
+}
+.grafico--node {
+  background-image: url(../img/grafico2.jpg);
+  grid-row: 8/9;
+}
+@media (min-width: 768px) {
+  /* mirar como esta definido nuestro grid y de cuantsa columas se supone que se an definido */
+  .grafico--node {
+    grid-row: 5/6;
+    grid-column: 2/4;
+  }
+}
+
+/* nostros.html-->Nosotros */
+.nosotros {
+  display: grid;
+  /* mirar el avance, en esta parte queda un espacio muy grande ya que estams creando un espacio vacio, definiren automatico para que tome el espacio necesario */
+  grid-template-rows: repeat(2,auto);
+}
+
+@media (min-width: 768px) {
+  /* acomodar vista de escritorio */
+  .nosotros {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+.nosotros__imagen {
+  grid-row: 1/2;
+  width : 100%;
+}
+
+@media (min-width: 768px) {
+  .nosotros__imagen {
+    grid-column: 2/3;
+  }
+}
+
+
+/* bloques */
+.bloques{
+  /* en celulares */
+  display: grid;
+  /* automaticamente si hay mas elementos esytos se acomodaran */
+  grid-template-columns: repeat(2, 1fr);
+  /* separacion */
+  gap: 2rem;
+}
+
+/* for pc */
+
+@media (min-width: 768px) {
+    .bloques{
+      grid-template-columns: repeat(4,1fr);
+    }
+}
+
+/* vamos a jugar con los bloques de manera individual */
+.bloque{
+  text-align: center;
+}
+/* imagen */
+.bloque__imagen{
+  width: 100%;
+}
+
+
+.bloque__titulo{
+  margin:0;
+}
+
+/* conteido de nuestra ´pagina ordenamiento*/
+.camisa__imagen{
+  width: 100%;
+  border-radius: 5%;
+
+}
+
+
+@media (min-width: 768px) {
+  .camisa{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 2rem;
+  }
+}
+
+
+
+/* fomulario */
+.formulario{
+  /* acomodar el formulario */
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 2rem;
+  /* separar los elementos que estan dentro del grid  */
+  
+}
+.formulario__campo{
+  font-family: Arial, Helvetica, sans-serif;
+  /* en elborde hay muchas formas de crar loas y darle s estilo */
+  /* orden: (tamaño)(tipo)(color) */
+  border: 0.5rem solid var(--primarioOscuro);
+  background-color: transparent;
+  color:var(--blanco);
+  font-size: 2rem;
+  padding: 1rem;
+  appearance:none;
+}
+
+.formulario__submit{
+  background-color: var(--secundario);
+  font-family: var(--fuentePrincipal);
+  font-size: 3rem;
+  border: none;
+  padding: 2rem;
+  /* este es nuevo son sobre las transiciones es nuevo */
+
+  /* pasos, (propiedad) (segundos de espera) (valor de la transicion: mas claro el tipo) */
+  transition: background-color 0.3s ease;
+  grid-column: 1/3;
+
+}
+
+/* pseudoclase */
+.formulario__submit:hover{
+  /* al darle estulo a l imput estepierde la propiedad que le permite mostrar la manito */
+  cursor: pointer;
+  background-color:rgb(159, 255, 242);
+}
